@@ -5,7 +5,8 @@
         <title>NewsRoom</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    </head>
     <body>
-        <h1 class="display-3">News Room</h1>
+        <h1 class="display-3" style="text-align: center;">News Room</h1>
+        <br><br>
 
         <div class="container overflow-hidden">
 
@@ -17,12 +18,17 @@
                     {% for news, description, i in context %}
         
                     <img src="{{i}}" alt="">
-                    <h3 class="display-5"> News: </h3> {{news}}
-                    <!-- <p>Date published: </p> {{datepublished}} -->
-                    <h4>Description: </h4> {{description}}
+                     <!-- <p style="text-align: center; text-decoration: underline;">{{news}}</p> -->
+                     <div>
+                        <br>
+                        <p style="font-size: x-small;"><strong>Description: </strong>{{description}}</p> 
+                        <p style="color:black; font-size: x-small;">Date : {{datepublished}}</p> 
+                    </div>
+                    <br><br><br>
                     <!-- <p>Author: </p> {{bywho}} -->
                     
                     {% endfor %}
+
                 </div>
             </div>
         </div>

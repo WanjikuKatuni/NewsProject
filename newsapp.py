@@ -10,15 +10,16 @@ def index():
     
 
     newsapi = NewsApiClient(api_key="206c52b0288342de8f6d76f653647450")
+    #to get latest news
     top_headlines = newsapi.get_top_headlines(sources='bbc-news', language='en')
 
     articles = top_headlines['articles']
 
     #add lists to append the data
     description = []
-    news = []
+    #news = []
     img = []
-    #datepublished = []
+    datepublished = []
     #bywho = []
 
 
@@ -26,15 +27,15 @@ def index():
         newsarticles = articles[i]
 
         #fetching information
-        news.append(newsarticles['title']) #fetch title
-        #datepublished.append(newsarticles['publishedAt']) #fetch date published
+        #news.append(newsarticles['title']) #fetch title
+        datepublished.append(newsarticles['publishedAt']) #fetch date published
         description.append(newsarticles['description']) # fetch description
         img.append(newsarticles['urlToImage']) #fetchimages
         #bywho.append(newsarticles['author']) #fetch author details
     
     #send data to indexhtml
 
-    newslist = zip(news, description, img)
+    newslist = zip(datepublished, description, img)
 
     return render_template('index.html', context=newslist)
 
