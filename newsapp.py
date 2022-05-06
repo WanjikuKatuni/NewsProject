@@ -11,7 +11,7 @@ def index():
 
     newsapi = NewsApiClient(api_key="206c52b0288342de8f6d76f653647450")
     #to get latest news from many articles
-    top_headlines = newsapi.get_top_headlines(sources='bbc-news, abc-news, the-verge, nfl-news', language='en')
+    top_headlines = newsapi.get_top_headlines(sources='bbc-news, abc-news, cnn, nfl-news', language='en')
 
     articles = top_headlines['articles']
 
@@ -110,6 +110,84 @@ def abc():
     newslist = zip(datepublished, description, img)
 
     return render_template('abc.html', context=newslist)
+
+
+
+
+#NFL
+
+@app.route('/nfl.html') #create url path/method
+def nfl():
+    
+
+    newsapi = NewsApiClient(api_key="206c52b0288342de8f6d76f653647450")
+    #to get latest news from many articles
+    top_headlines = newsapi.get_top_headlines(sources='nfl-news', language='en')
+
+    articles = top_headlines['articles']
+
+    #add lists to append the data
+    description = []
+    #news = []
+    img = []
+    datepublished = []
+    #bywho = []
+
+
+    for i in range(len(articles)):
+        newsarticles = articles[i]
+
+        #fetching information
+        #news.append(newsarticles['title']) #fetch title
+        datepublished.append(newsarticles['publishedAt']) #fetch date published
+        description.append(newsarticles['description']) # fetch description
+        img.append(newsarticles['urlToImage']) #fetchimages
+        #bywho.append(newsarticles['author']) #fetch author details
+    
+    #send data to indexhtml
+
+    newslist = zip(datepublished, description, img)
+
+    return render_template('nfl.html', context=newslist)
+
+
+
+#cnn
+
+@app.route('/cnn.html') #create url path/method
+def cnn():
+    
+
+    newsapi = NewsApiClient(api_key="206c52b0288342de8f6d76f653647450")
+    #to get latest news from many articles
+    top_headlines = newsapi.get_top_headlines(sources='cnn', language='en')
+
+    articles = top_headlines['articles']
+
+    #add lists to append the data
+    description = []
+    #news = []
+    img = []
+    datepublished = []
+    #bywho = []
+
+
+    for i in range(len(articles)):
+        newsarticles = articles[i]
+
+        #fetching information
+        #news.append(newsarticles['title']) #fetch title
+        datepublished.append(newsarticles['publishedAt']) #fetch date published
+        description.append(newsarticles['description']) # fetch description
+        img.append(newsarticles['urlToImage']) #fetchimages
+        #bywho.append(newsarticles['author']) #fetch author details
+    
+    #send data to indexhtml
+
+    newslist = zip(datepublished, description, img)
+
+    return render_template('cnn.html', context=newslist)
+
 
 
 # run application in debug stage
