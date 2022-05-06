@@ -20,7 +20,7 @@ def index():
 
 
     for i in range(len(articles)):
-        newsarticles = [articles[i]]
+        newsarticles = articles[i]
 
         #fetching information
         news.append(newsarticles['title']) #fetch title
