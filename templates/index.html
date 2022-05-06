@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>NewsRoom</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1 class="display-3">News Room</h1>
+
+        <div class="container-fluid">
+            <!-- insert for loop -->
+
+            {% for news, description, i in context %}
+
+            <img src="{{i}}" alt="">
+            <h3 class="display-5"> News: </h3> {{news}}
+            <!-- <p>Date published: </p> {{datepublished}} -->
+            <h4>Description: </h4> {{description}}
+            <!-- <p>Author: </p> {{bywho}} -->
+            
+            {% endfor %}
+</html>

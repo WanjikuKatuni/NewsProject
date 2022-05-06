@@ -16,9 +16,9 @@ def index():
     #add lists to append the data
     description = []
     news = []
-    image = []
-    datepublished = []
-    bywho = []
+    img = []
+    #datepublished = []
+    #bywho = []
 
 
     for i in range(len(articles)):
@@ -26,16 +26,16 @@ def index():
 
         #fetching information
         news.append(newsarticles['title']) #fetch title
-        datepublished.append(newsarticles['publishedAt']) #fetch date published
+        #datepublished.append(newsarticles['publishedAt']) #fetch date published
         description.append(newsarticles['description']) # fetch description
-        image.append(newsarticles['urlToImage']) #fetchimages
-        bywho.append(newsarticles['author']) #fetch author details
+        img.append(newsarticles['urlToImage']) #fetchimages
+        #bywho.append(newsarticles['author']) #fetch author details
     
     #send data to indexhtml
 
-    newslist = zip(news, datepublished, description, image, bywho)
+    newslist = zip(news, description, img)
 
-    return render_template('index.html', context = newslist)
+    return render_template('index.html', context=newslist)
 
     # run application in debug stage
 
