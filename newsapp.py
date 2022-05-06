@@ -34,3 +34,8 @@ def index():
     newslist = zip(news, datepublished, description, image, bywho)
 
     return render_template('index.html', contxt = newslist)
+
+    #run application in debug stage
+
+    if __name__ == "__main__":
+        app.run(debug = True)
