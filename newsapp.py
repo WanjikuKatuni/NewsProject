@@ -1,5 +1,5 @@
 from flask import Flask 
-from newsapi impot NewsApiClient
+from newsapi import NewsApiClient
 
 
 app = Flask(__name__)
@@ -15,3 +15,9 @@ def index():
     desc = []
     news = []
     img = []
+
+
+    for i in range(len(articles)):
+        newsarticles = [articles[i]]
+
+        news.append(newsarticles['title']) #fetch title
