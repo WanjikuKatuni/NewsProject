@@ -77,6 +77,41 @@ def bbc():
     return render_template('bbc.html', context=newslist)
 
 
+@app.route('/abc.html') #create url path/method
+def abc():
+    
+
+    newsapi = NewsApiClient(api_key="206c52b0288342de8f6d76f653647450")
+    #to get latest news from many articles
+    top_headlines = newsapi.get_top_headlines(sources='abc-news', language='en')
+
+    articles = top_headlines['articles']
+
+    #add lists to append the data
+    description = []
+    #news = []
+    img = []
+    datepublished = []
+    #bywho = []
+
+
+    for i in range(len(articles)):
+        newsarticles = articles[i]
+
+        #fetching information
+        #news.append(newsarticles['title']) #fetch title
+        datepublished.append(newsarticles['publishedAt']) #fetch date published
+        description.append(newsarticles['description']) # fetch description
+        img.append(newsarticles['urlToImage']) #fetchimages
+        #bywho.append(newsarticles['author']) #fetch author details
+    
+    #send data to indexhtml
+
+    newslist = zip(datepublished, description, img)
+
+    return render_template('abc.html', context=newslist)
+
+
 # run application in debug stage
 
 if __name__ == "__main__":
