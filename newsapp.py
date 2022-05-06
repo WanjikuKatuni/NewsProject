@@ -1,4 +1,4 @@
-from flask import Flask 
+from flask import Flask, render_template 
 from newsapi import NewsApiClient
 
 
@@ -28,4 +28,9 @@ def index():
         description.append(newsarticles['description']) # fetch description
         image.append(newsarticles['urlToImage']) #fetchimages
         bywho.append(newsarticles['author']) #fetch author details
-        
+    
+    #send data to indexhtml
+
+    newslist = zip(news, datepublished, description, image, bywho)
+
+    return render_template('index.html', contxt = newslist)
