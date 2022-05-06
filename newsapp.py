@@ -10,8 +10,8 @@ def index():
     
 
     newsapi = NewsApiClient(api_key="206c52b0288342de8f6d76f653647450")
-    #to get latest news
-    top_headlines = newsapi.get_top_headlines(sources='bbc-news', language='en')
+    #to get latest news from many articles
+    top_headlines = newsapi.get_top_headlines(sources='bbc-news, abc-news, the-verge, nfl-news', language='en')
 
     articles = top_headlines['articles']
 
