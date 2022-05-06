@@ -1,28 +1,28 @@
-NewsRoom
+# NewsRoom
 Built By Ann WAnjiku
-Description
+# Description
 Newsroom is a web application that displays a list of various news sources. On choosing a news source, it will preview the top news articles of the day.
 
 You can view the site at:Heroku
 
-User Stories
+# User Stories
 These are the behaviours/features that the application implements for use by a user.
 
-As a user I would like to:
+# # As a user I would like to:
 
 See various news sources
 Select the ones they prefer
 See the top news articles from that news source
 See the image, description and time the news article was created
 
-Specifications
+# Specifications
 Behaviour	Input	Output
 Display news sources	On page load	List of various news sources is displayed in navbar
 Display tabs with news by category	On Tab link click	Clickable links to open news based on category
 Display the preview of an article	On page load	Each article displays an image,description and publication date
 
-SetUp / Installation Requirements
-Prerequisites
+# SetUp / Installation Requirements
+# # Prerequisites
 python3.8
 pip
 virtualenv
@@ -37,10 +37,11 @@ To run the application, in your terminal:
   $ python3.8 newsroom
 
 
-Technologies Used
+# Technologies Used
 Python3.8
 Flask
 License
+
 Copyright (c) 2022 ANNWANJIKU
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
