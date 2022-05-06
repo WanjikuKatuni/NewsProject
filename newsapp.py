@@ -10,3 +10,8 @@ def index():
     top_headlines = newsapi.get_top_headlines(sources='bbc-news', language='en', country='us')
 
     articles = top_headlines['articles']
+
+    #add lists to append the data
+    desc = []
+    news = []
+    img = []
